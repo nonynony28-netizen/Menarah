@@ -1,14 +1,12 @@
-/* استيراد خط تجوال الاحترافي من جوجل (يجب أن يكون في السطر الأول دائماً) */
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
 
-/* أوامر استدعاء مكتبة Tailwind CSS الأساسية */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   html {
-    scroll-behavior: smooth; /* لجعل التنقل بين أقسام الموقع ناعماً والانزلاق سلس */
+    scroll-behavior: smooth;
     font-family: 'Tajawal', sans-serif;
   }
   
@@ -17,25 +15,23 @@
   }
 }
 
-/* تخصيص شريط التمرير (Scrollbar) ليتماشى مع هوية معرض الإنارة */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1f2937; /* لون رمادي داكن فخم */
+  background: #1f2937;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #eab308; /* اللون الذهبي/الأصفر الخاص بالإنارة */
+  background: #eab308;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ca8a04; /* لون ذهبي أغمق عند وقوف الماوس عليه */
+  background: #ca8a04;
 }
 
-/* فئة مساعدة لمنع تحديد النصوص في العناوين الكبيرة */
 .no-select {
   -webkit-user-select: none;
   -moz-user-select: none;
