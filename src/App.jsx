@@ -1,25 +1,29 @@
-import React from 'react';
-import Hero from './components/Hero';
-import About from './components/About';
-import EnarahProduct from './components/EnarahProduct';
-import WilmaxProducts from './components/WilmaxProducts';
-import Lighting from './components/Lighting';
-import Electrical from './components/Electrical';
-import Footer from './components/Footer';
-import './App.css'; // استيراد ملف التنسيقات والألوان
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import Brands from "./pages/Brands";
+import Partners from "./pages/Partners";
+import Projects from "./pages/Projects";
+import About from "./pages/About";
+import Branches from "./pages/Branches";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
-    // استخدام خط تجوال وتحديد اتجاه الموقع ليكون من اليمين لليسار
-    <div className="font-tajawal antialiased text-gray-800 bg-gray-50 selection:bg-yellow-500 selection:text-gray-900" dir="rtl">
-      <Hero />
-      <About />
-      <EnarahProduct />
-      <WilmaxProducts />
-      <Lighting />
-      <Electrical />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        <Route path="/products" element={<Products />} />
+        <Route path="/brands" element={<Brands />} />
+        <Route path="/partners" element={<Partners />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/branches" element={<Branches />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
