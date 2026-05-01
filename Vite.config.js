@@ -1,16 +1,21 @@
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react'; // 🔥 إضافة مهمة
 
 export default defineConfig({
-  // إعدادات الخادم المحلي (أثناء التطوير على جهازك)
+  plugins: [react()], // 🔥 هذا يحل مشكلة الشاشة البيضاء
+
+  // إعدادات الخادم المحلي
   server: {
-    port: 3000,        // تحديد رقم المنفذ
-    open: true,        // فتح الموقع في المتصفح تلقائياً عند تشغيل الأمر npm run dev
+    port: 3000,
+    open: true,
   },
   
-  // إعدادات البناء (عند تجهيز الموقع للرفع على Vercel)
+  // إعدادات البناء
   build: {
-    outDir: 'dist',    // اسم المجلد الذي سيحتوي على النسخة النهائية والمضغوطة من موقعك
-    emptyOutDir: true, // مسح الملفات القديمة من مجلد dist قبل إنشاء نسخة جديدة
-    minify: 'esbuild', // ضغط الأكواد لتسريع تحميل الموقع
-  }
+    outDir: 'dist',
+    emptyOutDir: true,
+    minify: 'esbuild',
+  },
+
+  base: '/', // 🔥 مهم جداً لـ Vercel
 });
