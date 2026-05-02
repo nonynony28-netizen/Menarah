@@ -98,3 +98,10 @@ button.outline {
   font-size: 14px;
   width: fit-content;
 }
+button {
+  transform: scale(1);
+}
+
+button:hover {
+  transform: scale(1.05);
+}
