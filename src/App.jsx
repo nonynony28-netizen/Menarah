@@ -15,18 +15,24 @@ import Contact from "./pages/Contact";
 function App() {
   return (
     <HashRouter>
+      
+      {/* Navbar ثابت */}
       <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/brands" element={<Brands />} />
-        <Route path="/partners" element={<Partners />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/branches" element={<Branches />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      {/* محتوى الصفحات */}
+      <div className="app-container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/brands" element={<Brands />} />
+          <Route path="/partners" element={<Partners />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/branches" element={<Branches />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+
     </HashRouter>
   );
 }
