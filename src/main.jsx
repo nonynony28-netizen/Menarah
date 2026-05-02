@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import "./index.css"; // مهم: بحرف i صغير
+import "./Index.css"; // مهم: بحرف i صغير
 
 console.log("🚀 تشغيل تطبيق React...");
 
