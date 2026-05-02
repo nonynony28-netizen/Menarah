@@ -1,3 +1,5 @@
+import React from "react";
+
 const partners = ["شركة 1", "شركة 2", "شركة 3"];
 
 function Partners() {
