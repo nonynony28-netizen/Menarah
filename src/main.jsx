@@ -1,20 +1,41 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import "./Index.css";
 
-// 💡 رسالة تتبع للمبرمج للتأكد من عمل الكود
-console.log("🚀 جاري تشغيل تطبيق React...");
-
-const rootElement = document.getElementById("root");
-
-if (!rootElement) {
-  console.error("❌ لم يتم العثور على عنصر root!");
-  throw new Error("Root element not found. تأكد من وجود <div id='root'></div> داخل index.html");
+function ErrorFallback({ error }) {
+  return (
+    <div style={{
+      padding: 20,
+      background: "#111",
+      color: "red",
+      fontSize: "18px"
+    }}>
+      <h1>فيه خطأ في الموقع</h1>
+      <pre>{error?.message}</pre>
+    </div>
+  );
 }
 
-ReactDOM.createRoot(rootElement).render(
-  <React.StrictMode>
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { error: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { error };
+  }
+
+  render() {
+    if (this.state.error) {
+      return <ErrorFallback error={this.state.error} />;
+    }
+    return this.props.children;
+  }
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <ErrorBoundary>
     <App />
-  </React.StrictMode>
+  </ErrorBoundary>
 );
