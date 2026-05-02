@@ -1,3 +1,5 @@
+import React from "react";
+
 const branches = ["طرابلس", "اجدابيا", "مصراتة", "سبها"];
 
 function Branches() {
