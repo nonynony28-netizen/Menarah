@@ -1,10 +1,10 @@
 import React from "react";
 
 const features = [
-  "جودة عالية",
   "تصاميم عصرية",
-  "أسعار منافسة",
-  "خدمة عملاء ممتازة",
+  "كفاءة طاقة عالية",
+  "تنفيذ احترافي",
+  "ضمان وجودة",
 ];
 
 const topProducts = [
@@ -20,14 +20,14 @@ function Home() {
 
       {/* Hero */}
       <section>
-        <span className="badge">حلول إنارة احترافية</span>
+        <span className="badge">حلول إنارة وتأسيس كهربائي</span>
 
         <h1 className="hero-title">
           الإنارة الحديثة
         </h1>
 
         <p>
-          تجربة إضاءة فاخرة تجمع بين الجمال والتقنية، مصممة خصيصاً لمشاريعك.
+          حلول إضاءة احترافية تجمع بين الأداء والجمال، مصممة لتناسب جميع مشاريعك.
         </p>
 
         <div className="hero-actions">
@@ -44,14 +44,20 @@ function Home() {
         </div>
       </section>
 
+      {/* Value Card */}
+      <section className="hero-card">
+        <h3>جودة موثوقة</h3>
+        <p>منتجات بمعايير عالمية مع دعم فني مستمر.</p>
+      </section>
+
       {/* Features */}
       <section className="section">
         <h2>لماذا نحن؟</h2>
-
         <div className="grid">
-          {features.map((item, i) => (
+          {features.map((f, i) => (
             <div className="card" key={i}>
-              <h3>{item}</h3>
+              <h3>{f}</h3>
+              <p>حلول عملية تناسب مختلف الاستخدامات.</p>
             </div>
           ))}
         </div>
@@ -60,12 +66,11 @@ function Home() {
       {/* Top Products */}
       <section className="section">
         <h2>أهم المنتجات</h2>
-
         <div className="grid">
-          {topProducts.map((item, i) => (
+          {topProducts.map((p, i) => (
             <div className="card" key={i}>
-              <h3>{item}</h3>
-              <p>منتج مميز عالي الجودة</p>
+              <h3>{p}</h3>
+              <p>منتج مميز بجودة عالية وأداء ثابت.</p>
             </div>
           ))}
         </div>
@@ -75,7 +80,7 @@ function Home() {
       <section className="cta">
         <h2>ابدأ مشروعك معنا اليوم</h2>
         <button onClick={() => (window.location.href = "#/contact")}>
-          تواصل الآن
+          اطلب استشارة
         </button>
       </section>
 
