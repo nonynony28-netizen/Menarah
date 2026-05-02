@@ -1,3 +1,5 @@
+import React from "react";
+
 const brands = [
   { name: "enarah", desc: "منتجات إنارة حديثة" },
   { name: "wellmax", desc: "حلول كهربائية موثوقة" },
