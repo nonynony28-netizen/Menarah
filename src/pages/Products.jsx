@@ -1,3 +1,5 @@
+import React from "react";
+
 const products = [
   "الأسلاك والكابلات",
   "السبوتات والإنارة",
