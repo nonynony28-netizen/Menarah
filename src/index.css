@@ -1,118 +1,18 @@
-.hero-title {
-  font-size: 60px;
-  font-weight: 900;
+.section {
+  margin-top: 60px;
+}
+
+.section h2 {
+  font-size: 32px;
   color: #facc15;
-  text-shadow: 0 0 25px rgba(250, 204, 21, 0.4);
+  margin-bottom: 20px;
 }
 
-.hero-actions {
-  display: flex;
-  gap: 14px;
-  margin-top: 20px;
+.cta {
+  margin-top: 80px;
+  text-align: center;
 }
 
-button {
-  padding: 12px 22px;
-  border-radius: 30px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  background: #facc15;
-  color: #000;
-  transition: 0.3s;
-}
-
-button:hover {
-  transform: scale(1.05);
-  background: #eab308;
-}
-
-button.outline {
-  background: transparent;
-  border: 2px solid #facc15;
-  color: #facc15;
-}
-
-.hero-card {
-  margin-top: 30px;
-  padding: 25px;
-  border-radius: 20px;
-  background: rgba(30, 41, 59, 0.8);
-  border: 1px solid #334155;
-  backdrop-filter: blur(10px);
-}
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background: #0f172a;
-  border-bottom: 1px solid #1e293b;
-}
-
-.logo {
-  color: #facc15;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.nav-links {
-  display: flex;
-  gap: 15px;
-}
-
-.nav-links a {
-  color: #cbd5f5;
-  text-decoration: none;
-  font-size: 14px;
-  transition: 0.3s;
-}
-
-.nav-links a:hover {
-  color: #facc15;
-}
-/* خلفية فاخرة */
-body {
-  background: radial-gradient(circle at top, #1e293b, #020617);
-  color: #f1f5f9;
-}
-
-/* عنوان فاخر */
-.hero-title {
-  font-size: 64px;
-  font-weight: 900;
-  color: #facc15;
-  text-shadow: 0 0 40px rgba(250, 204, 21, 0.5);
-  letter-spacing: 1px;
-}
-
-/* زر احترافي */
-button {
-  padding: 12px 24px;
-  border-radius: 40px;
-  background: linear-gradient(135deg, #facc15, #eab308);
-  color: #000;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-button:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 20px rgba(250, 204, 21, 0.5);
-}
-
-/* كروت زجاجية */
-.card,
-.hero-card {
-  background: rgba(30, 41, 59, 0.5);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  border-radius: 20px;
-  padding: 20px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(250, 204, 21, 0.2);
+.cta h2 {
+  margin-bottom: 20px;
 }
