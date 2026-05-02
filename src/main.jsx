@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import "./index.css";
+import "./Index.css";
 
 // 💡 رسالة تتبع للمبرمج للتأكد من عمل الكود
 console.log("🚀 جاري تشغيل تطبيق React...");
