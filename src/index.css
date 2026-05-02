@@ -143,3 +143,6 @@ button.outline{
   margin-top:90px;
   text-align:center;
 }
+.app-container {
+  padding-top: 20px;
+}
