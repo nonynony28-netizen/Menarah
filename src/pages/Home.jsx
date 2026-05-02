@@ -4,21 +4,19 @@ function Home() {
   return (
     <main className="page hero">
       <section>
-        <span className="badge">حلول إنارة وتأسيس كهربائي</span>
+        <span className="badge">حلول إنارة احترافية</span>
 
         <h1 className="hero-title">
           الإنارة الحديثة
         </h1>
 
         <p>
-          أفضل حلول الإضاءة والسبوتات والأسلاك بجودة عالية تناسب جميع المشاريع.
+          تجربة إضاءة فاخرة تجمع بين الجمال والتقنية، مصممة خصيصاً لمشاريعك.
         </p>
 
         <div className="hero-actions">
-          <button
-            onClick={() => (window.location.href = "#/products")}
-          >
-            اكتشف المنتجات
+          <button onClick={() => (window.location.href = "#/products")}>
+            استعرض المنتجات
           </button>
 
           <button
@@ -31,8 +29,8 @@ function Home() {
       </section>
 
       <section className="hero-card">
-        <h3>جودة موثوقة</h3>
-        <p>منتجات مناسبة لكل المشاريع الحديثة مع ضمان الأداء والاستمرارية.</p>
+        <h3>إضاءة بمستوى عالمي</h3>
+        <p>نقدم لك أحدث تقنيات الإضاءة مع تصميم فاخر يناسب جميع المشاريع.</p>
       </section>
     </main>
   );
