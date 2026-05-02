@@ -1,8 +1,24 @@
 import React from "react";
 
+const features = [
+  "جودة عالية",
+  "تصاميم عصرية",
+  "أسعار منافسة",
+  "خدمة عملاء ممتازة",
+];
+
+const topProducts = [
+  "سبوت لايت",
+  "ثريات فاخرة",
+  "إنترفون",
+  "أسلاك كهرباء",
+];
+
 function Home() {
   return (
     <main className="page hero">
+
+      {/* Hero */}
       <section>
         <span className="badge">حلول إنارة احترافية</span>
 
@@ -28,10 +44,41 @@ function Home() {
         </div>
       </section>
 
-      <section className="hero-card">
-        <h3>إضاءة بمستوى عالمي</h3>
-        <p>نقدم لك أحدث تقنيات الإضاءة مع تصميم فاخر يناسب جميع المشاريع.</p>
+      {/* Features */}
+      <section className="section">
+        <h2>لماذا نحن؟</h2>
+
+        <div className="grid">
+          {features.map((item, i) => (
+            <div className="card" key={i}>
+              <h3>{item}</h3>
+            </div>
+          ))}
+        </div>
       </section>
+
+      {/* Top Products */}
+      <section className="section">
+        <h2>أهم المنتجات</h2>
+
+        <div className="grid">
+          {topProducts.map((item, i) => (
+            <div className="card" key={i}>
+              <h3>{item}</h3>
+              <p>منتج مميز عالي الجودة</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="cta">
+        <h2>ابدأ مشروعك معنا اليوم</h2>
+        <button onClick={() => (window.location.href = "#/contact")}>
+          تواصل الآن
+        </button>
+      </section>
+
     </main>
   );
 }
