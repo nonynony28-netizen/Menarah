@@ -16,3 +16,130 @@
 .cta h2 {
   margin-bottom: 20px;
 }
+/* ====== الهوية (ألوان + Glow) ====== */
+:root{
+  --gold-1:#facc15;
+  --gold-2:#eab308;
+  --bg-1:#020617;
+  --bg-2:#1e293b;
+  --text:#f1f5f9;
+  --muted:#cbd5f5;
+}
+
+/* خلفية فاخرة */
+body{
+  background: radial-gradient(circle at top, var(--bg-2), var(--bg-1));
+  color: var(--text);
+}
+
+/* العنوان الرئيسي */
+.hero-title{
+  font-size:64px;
+  font-weight:900;
+  color:var(--gold-1);
+  letter-spacing:1px;
+  text-shadow:
+    0 0 12px rgba(250,204,21,.35),
+    0 0 32px rgba(250,204,21,.25);
+}
+
+/* عناوين الأقسام */
+.section h2,
+.cta h2{
+  color:var(--gold-1);
+  text-shadow:0 0 14px rgba(250,204,21,.25);
+}
+
+/* نصوص */
+p{ color:var(--muted); }
+
+/* Badge */
+.badge{
+  background:rgba(30,41,59,.6);
+  border:1px solid rgba(250,204,21,.2);
+  color:var(--gold-1);
+  border-radius:12px;
+  padding:6px 12px;
+}
+
+/* أزرار */
+.hero-actions{ display:flex; gap:14px; margin-top:18px; }
+
+button{
+  padding:12px 22px;
+  border-radius:999px;
+  border:none;
+  cursor:pointer;
+  font-weight:700;
+  background:linear-gradient(135deg,var(--gold-1),var(--gold-2));
+  color:#000;
+  transition:.25s;
+  box-shadow:0 6px 20px rgba(250,204,21,.25);
+}
+button:hover{
+  transform:scale(1.06);
+  box-shadow:0 10px 30px rgba(250,204,21,.45);
+}
+button.outline{
+  background:transparent;
+  color:var(--gold-1);
+  border:2px solid var(--gold-1);
+}
+
+/* كروت (Glass) */
+.card,
+.hero-card{
+  background:rgba(30,41,59,.55);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(148,163,184,.18);
+  border-radius:18px;
+  padding:22px;
+  transition:.25s;
+}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 28px rgba(250,204,21,.18);
+}
+
+/* Grid */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+/* Navbar فاخر */
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 20px;
+  background:rgba(15,23,42,.7);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.logo{
+  color:var(--gold-1);
+  font-weight:800;
+}
+.nav-links a{
+  color:#cbd5f5;
+  text-decoration:none;
+  margin-inline:8px;
+  transition:.2s;
+}
+.nav-links a:hover{
+  color:var(--gold-1);
+}
+
+/* أقسام */
+.section{ margin-top:64px; }
+.section h2{ font-size:32px; margin-bottom:18px; }
+
+.cta{
+  margin-top:90px;
+  text-align:center;
+}
