@@ -235,3 +235,52 @@ button.outline{
   }
 
 }
+/* ===== HERO GRID ===== */
+.hero-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+/* ===== VISUAL ===== */
+.hero-visual{
+  display:flex;
+  justify-content:center;
+}
+
+.hero-box{
+  width:200px;
+  height:200px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.05);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:60px;
+  box-shadow:0 0 40px rgba(255,138,0,.15);
+}
+
+/* ===== FEATURE CARD ===== */
+.feature-card .icon{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+/* ===== PRODUCT CARD ===== */
+.product-card .product-img{
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .hero-grid{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero-visual{
+    order:-1;
+  }
+}
