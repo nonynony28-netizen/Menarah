@@ -5,7 +5,7 @@ function Splash({ onFinish }) {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      onFinish(); // بعد 3 ثواني يفتح الموقع
+      onFinish();
     }, 3000);
 
     return () => clearTimeout(timer);
