@@ -17,15 +17,22 @@ function Home() {
   return (
     <main className="page">
 
+      {/* 🔥 Glow Background */}
+      <div className="glow-bg"></div>
+
+      {/* ===== HERO ===== */}
       <section className="hero-grid">
+
         <motion.div
-          initial={{ opacity: 0, y: 35 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <span className="badge">حلول إنارة وتأسيس كهربائي</span>
 
-          <h1 className="hero-title">الإنارة الحديثة</h1>
+          <h1 className="hero-title float">
+            الإنارة الحديثة
+          </h1>
 
           <p>
             موقع متخصص في حلول الإنارة الحديثة، السبوتات، الأسلاك، الكوابل،
@@ -46,21 +53,23 @@ function Home() {
           </div>
         </motion.div>
 
+        {/* 💡 VISUAL */}
         <motion.div
           className="hero-visual"
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 0.9, delay: 0.2 }}
         >
-          <div className="luxury-light">
+          <div className="luxury-light float">
             <span>💡</span>
           </div>
         </motion.div>
       </section>
 
+      {/* ===== FEATURES ===== */}
       <motion.section
         className="section"
-        initial={{ opacity: 0, y: 35 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
@@ -72,8 +81,10 @@ function Home() {
             <motion.div
               className="card"
               key={index}
-              whileHover={{ y: -8, scale: 1.02 }}
+              whileHover={{ y: -10, scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 200 }}
             >
+              <div className="product-placeholder">⚡</div>
               <h3>{item.title}</h3>
               <p>{item.desc}</p>
             </motion.div>
@@ -81,9 +92,10 @@ function Home() {
         </div>
       </motion.section>
 
+      {/* ===== PRODUCTS ===== */}
       <motion.section
         className="section"
-        initial={{ opacity: 0, y: 35 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
@@ -95,7 +107,8 @@ function Home() {
             <motion.div
               className="card product-card"
               key={index}
-              whileHover={{ y: -8, scale: 1.02 }}
+              whileHover={{ y: -10, scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 200 }}
             >
               <div className="product-placeholder">✦</div>
               <h3>{item}</h3>
@@ -105,14 +118,18 @@ function Home() {
         </div>
       </motion.section>
 
+      {/* ===== CTA ===== */}
       <motion.section
         className="cta"
-        initial={{ opacity: 0, y: 35 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
       >
-        <h2>ابدأ مشروعك معنا اليوم</h2>
+        <h2 className="hero-title">
+          ابدأ مشروعك معنا اليوم
+        </h2>
+
         <p>اختر حلول إنارة موثوقة بتصميم يناسب مشروعك.</p>
 
         <button onClick={() => (window.location.href = "#/contact")}>
