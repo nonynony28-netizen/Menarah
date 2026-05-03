@@ -15,6 +15,8 @@ body{
   direction: rtl;
   font-family: "Tajawal", system-ui, sans-serif;
   color: var(--text);
+  margin: 0;
+
   background:
     radial-gradient(800px 400px at 80% -10%, rgba(255,138,0,.15), transparent 60%),
     radial-gradient(900px 500px at 10% 0%, rgba(23,59,120,.35), transparent 60%),
@@ -25,28 +27,29 @@ body{
 .page{
   max-width:1100px;
   margin:auto;
-  padding:70px 20px;
+  padding:40px 20px;
 }
 
 .section{
-  margin-top:70px;
+  margin-top:50px;
 }
 
 .app-container{
-  padding-top:20px;
+  padding-top:10px;
 }
 
 /* ====== HERO ====== */
 .hero-title{
-  font-size:64px;
+  font-size: clamp(32px, 6vw, 56px);
   font-weight:900;
+  line-height:1.2;
   letter-spacing:.5px;
 
   background: linear-gradient(135deg, #ffffff, #60a5fa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  text-shadow: 0 0 30px rgba(96,165,250,.25);
+  text-shadow: 0 0 25px rgba(96,165,250,.25);
 }
 
 .badge{
@@ -56,14 +59,16 @@ body{
   background:rgba(255,138,0,.12);
   color:var(--accent);
   border:1px solid rgba(255,138,0,.25);
-  margin-bottom:12px;
+  margin-bottom:10px;
+  font-size:13px;
 }
 
 /* ====== TEXT ====== */
 p{
   color:var(--muted);
-  font-size:17px;
-  line-height:1.6;
+  font-size: clamp(14px, 2vw, 17px);
+  line-height:1.7;
+  max-width: 500px;
 }
 
 .card p{
@@ -73,36 +78,51 @@ p{
 /* ====== TITLES ====== */
 .section h2,
 .cta h2{
-  font-size:30px;
+  font-size: clamp(22px, 3vw, 30px);
+
   background: linear-gradient(135deg, #ffffff, #93c5fd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  margin-bottom:14px;
+}
+
+/* خط صغير احترافي تحت العنوان */
+.section h2::after{
+  content:"";
+  display:block;
+  width:50px;
+  height:3px;
+  margin-top:6px;
+  background:linear-gradient(90deg, var(--accent), #60a5fa);
 }
 
 /* ====== BUTTONS ====== */
 .hero-actions{
   display:flex;
-  gap:14px;
+  gap:12px;
   margin-top:18px;
+  flex-wrap:wrap;
 }
 
 button{
-  padding:12px 22px;
+  padding:10px 18px;
   border-radius:999px;
   border:none;
   cursor:pointer;
   font-weight:800;
+  font-size:14px;
 
   background:linear-gradient(135deg, var(--accent), #ff6a00);
   color:#0b1e3c;
 
   transition:.25s;
-  box-shadow:0 10px 30px rgba(255,138,0,.25);
+  box-shadow:0 8px 25px rgba(255,138,0,.25);
 }
 
 button:hover{
-  transform:translateY(-2px) scale(1.05);
-  box-shadow:0 16px 40px rgba(255,138,0,.45);
+  transform:translateY(-2px) scale(1.04);
+  box-shadow:0 14px 35px rgba(255,138,0,.45);
 }
 
 button.outline{
@@ -117,31 +137,36 @@ button.outline{
   background:rgba(16,42,86,.45);
   backdrop-filter:blur(12px);
   border:1px solid rgba(255,255,255,.08);
-  border-radius:18px;
-  padding:22px;
+  border-radius:20px;
+  padding:26px;
   transition:.25s;
 }
 
+.card h3{
+  font-size:18px;
+  margin-bottom:8px;
+}
+
 .card:hover{
-  transform:translateY(-6px);
+  transform:translateY(-8px) scale(1.02);
   box-shadow:0 0 30px rgba(16,42,86,.6);
 }
 
 /* ====== GRID ====== */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
-  gap:18px;
+  grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+  gap:22px;
 }
 
 /* ====== CTA ====== */
 .cta{
-  margin-top:90px;
+  margin-top:80px;
   text-align:center;
 }
 
 .cta h2{
-  margin-bottom:16px;
+  margin-bottom:14px;
 }
 
 /* ====== NAVBAR ====== */
@@ -154,7 +179,7 @@ button.outline{
   justify-content:space-between;
   align-items:center;
 
-  padding:14px 20px;
+  padding:12px 16px;
 
   background:rgba(11,30,60,.6);
   backdrop-filter:blur(10px);
@@ -164,19 +189,49 @@ button.outline{
 .logo{
   color:#fff;
   font-weight:900;
+  font-size:16px;
 }
 
 .nav-links{
   display:flex;
-  gap:14px;
+  gap:12px;
 }
 
 .nav-links a{
   color:#c9d6f2;
   text-decoration:none;
   transition:.2s;
+  font-size:13px;
 }
 
 .nav-links a:hover{
   color:var(--accent);
+}
+
+/* ====== MOBILE FIX ====== */
+@media (max-width:768px){
+
+  .navbar{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .hero-title{
+    text-align:center;
+  }
+
+  p{
+    text-align:center;
+    margin:auto;
+  }
+
+  .hero-actions{
+    justify-content:center;
+  }
+
 }
