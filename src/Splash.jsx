@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import splash from "../picture/hero.jpg"; // اسم صورتك
+import splash from "./picture/hero.jpg"; // المسار الصحيح
 
 function Splash({ onFinish }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       onFinish && onFinish();
-    }, 3000); // مدة العرض
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, [onFinish]);
