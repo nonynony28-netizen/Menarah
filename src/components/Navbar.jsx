@@ -6,12 +6,9 @@ function Navbar() {
       <h2 className="logo">الإنارة الحديثة</h2>
 
       <div className="nav-links">
-        <a href="#/">الرئيسية</a>
-        <a href="#/products">المنتجات</a>
         <a href="#/projects">المشاريع</a>
-        <a href="#/brands">العلامات</a>
         <a href="#/branches">الفروع</a>
-        <a href="#/contact">تواصل</a>
+        <a href="#/contact">التواصل</a>
       </div>
     </nav>
   );
