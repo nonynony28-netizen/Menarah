@@ -1,86 +1,107 @@
 import React from "react";
 
 const features = [
-  "تصاميم عصرية",
-  "كفاءة طاقة عالية",
-  "تنفيذ احترافي",
-  "ضمان وجودة",
+  { title: "تصاميم عصرية", icon: "💡" },
+  { title: "كفاءة طاقة عالية", icon: "⚡" },
+  { title: "تنفيذ احترافي", icon: "🛠️" },
+  { title: "ضمان وجودة", icon: "✅" },
 ];
 
 const topProducts = [
-  "سبوت لايت",
-  "ثريات فاخرة",
-  "إنترفون",
-  "أسلاك كهرباء",
+  { name: "سبوت لايت", desc: "إضاءة داخلية عصرية" },
+  { name: "ثريات فاخرة", desc: "تصاميم راقية للمنازل" },
+  { name: "إنترفون", desc: "حلول تواصل حديثة" },
+  { name: "أسلاك كهرباء", desc: "أمان وجودة عالية" },
 ];
 
 function Home() {
   return (
     <main className="page hero">
 
-      {/* Hero */}
-      <section>
-        <span className="badge">حلول إنارة وتأسيس كهربائي</span>
+      {/* ===== Hero Section ===== */}
+      <section className="hero-grid">
 
-        <h1 className="hero-title">
-          الإنارة الحديثة
-        </h1>
+        {/* Left (Text) */}
+        <div>
+          <span className="badge">حلول إنارة احترافية</span>
 
-        <p>
-          حلول إضاءة احترافية تجمع بين الأداء والجمال، مصممة لتناسب جميع مشاريعك.
-        </p>
+          <h1 className="hero-title">
+            الإنارة الحديثة
+          </h1>
 
-        <div className="hero-actions">
-          <button onClick={() => (window.location.href = "#/products")}>
-            استعرض المنتجات
-          </button>
+          <p>
+            إضاءة عصرية تجمع بين الأداء والجمال، مصممة خصيصاً لمشاريعك.
+          </p>
 
-          <button
-            className="outline"
-            onClick={() => (window.location.href = "#/contact")}
-          >
-            تواصل معنا
-          </button>
+          <div className="hero-actions">
+            <button onClick={() => (window.location.href = "#/products")}>
+              استعرض المنتجات
+            </button>
+
+            <button
+              className="outline"
+              onClick={() => (window.location.href = "#/contact")}
+            >
+              تواصل معنا
+            </button>
+          </div>
         </div>
+
+        {/* Right (Visual) */}
+        <div className="hero-visual">
+          <div className="hero-box">
+            💡
+          </div>
+        </div>
+
       </section>
 
-      {/* Value Card */}
+      {/* ===== Value Card ===== */}
       <section className="hero-card">
         <h3>جودة موثوقة</h3>
         <p>منتجات بمعايير عالمية مع دعم فني مستمر.</p>
       </section>
 
-      {/* Features */}
+      {/* ===== Features ===== */}
       <section className="section">
         <h2>لماذا نحن؟</h2>
+
         <div className="grid">
           {features.map((f, i) => (
-            <div className="card" key={i}>
-              <h3>{f}</h3>
+            <div className="card feature-card" key={i}>
+              <div className="icon">{f.icon}</div>
+              <h3>{f.title}</h3>
               <p>حلول عملية تناسب مختلف الاستخدامات.</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Top Products */}
+      {/* ===== Products ===== */}
       <section className="section">
         <h2>أهم المنتجات</h2>
+
         <div className="grid">
           {topProducts.map((p, i) => (
-            <div className="card" key={i}>
-              <h3>{p}</h3>
-              <p>منتج مميز بجودة عالية وأداء ثابت.</p>
+            <div className="card product-card" key={i}>
+              <div className="product-img">🛍️</div>
+              <h3>{p.name}</h3>
+              <p>{p.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ===== CTA ===== */}
       <section className="cta">
         <h2>ابدأ مشروعك معنا اليوم</h2>
+
+        <p style={{ marginBottom: "15px" }}>
+          فريقنا جاهز لمساعدتك في اختيار أفضل حلول الإضاءة.
+        </p>
+
         <button onClick={() => (window.location.href = "#/contact")}>
-          اطلب استشارة
+          اطلب استشارة الآن
         </button>
       </section>
 
