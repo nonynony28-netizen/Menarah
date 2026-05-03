@@ -1,10 +1,15 @@
 import React from "react";
+import { HashRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div style={{color:"white", padding:"40px"}}>
-      APP WORKING
-    </div>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </HashRouter>
   );
 }
 
