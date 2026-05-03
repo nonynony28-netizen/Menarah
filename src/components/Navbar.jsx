@@ -19,14 +19,12 @@ function Navbar() {
 
       {/* القائمة */}
       <div className={`side-menu ${open ? "open" : ""}`}>
-        
-        <button className="close-btn" onClick={() => setOpen(false)}>✕</button>
+  <button className="close-btn" onClick={() => setOpen(false)}>✕</button>
 
-        <a href="#/projects" onClick={() => setOpen(false)}>المشاريع</a>
-        <a href="#/branches" onClick={() => setOpen(false)}>الفروع</a>
-        <a href="#/contact" onClick={() => setOpen(false)}>اتصل بنا</a>
-
-      </div>
+  <a href="#/projects" onClick={() => setOpen(false)}>📁 المشاريع</a>
+  <a href="#/branches" onClick={() => setOpen(false)}>📍 الفروع</a>
+  <a href="#/contact" onClick={() => setOpen(false)}>📞 اتصل بنا</a>
+</div>
     </>
   );
 }
