@@ -1,53 +1,35 @@
 import React from "react";
+import { motion } from "framer-motion";
 
-/* ===== بيانات مبدئية (تبدّلها لاحقاً بالصور الحقيقية) ===== */
-
-// لماذا نحن
 const features = [
-  { title: "جودة عالية", icon: "💡" },
-  { title: "كفاءة طاقة", icon: "⚡" },
-  { title: "تنفيذ احترافي", icon: "🛠️" },
-  { title: "ضمان وخدمة", icon: "✅" },
+  { title: "جودة عالية", desc: "منتجات موثوقة للمشاريع السكنية والتجارية." },
+  { title: "حلول متكاملة", desc: "إنارة، سبوتات، أسلاك، وكوابل كهربائية." },
+  { title: "اختيار احترافي", desc: "منتجات ENARAH و WELLMAX بعناية." },
 ];
 
-// الأكثر رواجاً – ENARAH
-const enarahProducts = [
-  { name: "سبوت لايت", desc: "إضاءة داخلية عصرية" },
-  { name: "ثريا حديثة", desc: "تصميم فاخر" },
+const products = [
+  "منتجات ENARAH",
+  "منتجات WELLMAX",
+  "الأكثر رواجًا",
 ];
-
-// الأكثر رواجاً – WELLMAX
-const wellmaxProducts = [
-  { name: "لمبات LED", desc: "توفير عالي للطاقة" },
-  { name: "كشافات", desc: "إضاءة قوية خارجية" },
-];
-
-// شركاؤنا (استبدل بالإيمجات لاحقاً)
-const partners = ["ENARAH", "WELLMAX", "Partner 3", "Partner 4"];
-
-// مشاريع (استبدل بالإيمجات)
-const projects = ["فيلا", "محل", "سقف حديث"];
-
-// الفروع
-const branches = ["طرابلس", "اجدابيا", "مصراتة", "سبها"];
 
 function Home() {
   return (
-    <main className="page hero">
+    <main className="page">
 
-      {/* ===== 1) HERO ===== */}
       <section className="hero-grid">
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <span className="badge">حلول إنارة وتأسيس كهربائي</span>
 
-        {/* نص */}
-        <div>
-          <span className="badge">حلول إنارة احترافية</span>
-
-          <h1 className="hero-title">
-            الإنارة الحديثة
-          </h1>
+          <h1 className="hero-title">الإنارة الحديثة</h1>
 
           <p>
-            إضاءة عصرية تجمع بين الأداء والجمال، مصممة لتناسب جميع مشاريعك.
+            موقع متخصص في حلول الإنارة الحديثة، السبوتات، الأسلاك، الكوابل،
+            والثريات بجودة عالية وهوية احترافية.
           </p>
 
           <div className="hero-actions">
@@ -62,112 +44,81 @@ function Home() {
               تواصل معنا
             </button>
           </div>
-        </div>
+        </motion.div>
 
-        {/* عنصر بصري (استبدله بصورة لاحقاً) */}
-        <div className="hero-visual">
-          <div className="hero-box">💡</div>
-        </div>
+        <motion.div
+          className="hero-visual"
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.2 }}
+        >
+          <div className="luxury-light">
+            <span>💡</span>
+          </div>
+        </motion.div>
       </section>
 
-      {/* ===== 2) لماذا نحن ===== */}
-      <section className="section">
+      <motion.section
+        className="section"
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+      >
         <h2>لماذا نحن؟</h2>
 
         <div className="grid">
-          {features.map((f, i) => (
-            <div className="card feature-card" key={i}>
-              <div className="icon">{f.icon}</div>
-              <h3>{f.title}</h3>
-              <p>حلول عملية تناسب مختلف الاستخدامات.</p>
-            </div>
+          {features.map((item, index) => (
+            <motion.div
+              className="card"
+              key={index}
+              whileHover={{ y: -8, scale: 1.02 }}
+            >
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
-      {/* ===== 3) الأكثر رواجاً ===== */}
-      <section className="section">
+      <motion.section
+        className="section"
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+      >
         <h2>الأكثر رواجًا لدينا</h2>
-        <p className="section-desc">
-          منتجات مختارة بعناية يفضلها عملاؤنا في مختلف المشاريع
-        </p>
-
-        {/* ENARAH */}
-        <h3 style={{ marginTop: "20px" }}>منتجات ENARAH</h3>
-        <div className="grid">
-          {enarahProducts.map((p, i) => (
-            <div className="card product-card" key={i}>
-              <div className="product-img">🛍️</div>
-              <h3>{p.name}</h3>
-              <p>{p.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* WELLMAX */}
-        <h3 style={{ marginTop: "30px" }}>منتجات WELLMAX</h3>
-        <div className="grid">
-          {wellmaxProducts.map((p, i) => (
-            <div className="card product-card" key={i}>
-              <div className="product-img">🛍️</div>
-              <h3>{p.name}</h3>
-              <p>{p.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ===== 4) شركاؤنا ===== */}
-      <section className="section">
-        <h2>شركاؤنا في النجاح</h2>
 
         <div className="grid">
-          {partners.map((p, i) => (
-            <div className="card" key={i}>
-              <h3>{p}</h3>
-            </div>
+          {products.map((item, index) => (
+            <motion.div
+              className="card product-card"
+              key={index}
+              whileHover={{ y: -8, scale: 1.02 }}
+            >
+              <div className="product-placeholder">✦</div>
+              <h3>{item}</h3>
+              <p>منتجات مختارة بعناية تناسب مشاريع الإنارة الحديثة.</p>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
-      {/* ===== 5) المشاريع ===== */}
-      <section className="section">
-        <h2>مشاريعنا</h2>
-
-        <div className="grid">
-          {projects.map((proj, i) => (
-            <div className="card" key={i}>
-              <h3>{proj}</h3>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ===== 6) الفروع ===== */}
-      <section className="section">
-        <h2>فروعنا</h2>
-
-        <div className="grid">
-          {branches.map((b, i) => (
-            <div className="card" key={i}>
-              <h3>{b}</h3>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ===== 7) CTA ===== */}
-      <section className="cta">
+      <motion.section
+        className="cta"
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+      >
         <h2>ابدأ مشروعك معنا اليوم</h2>
-
-        <p style={{ marginBottom: "15px" }}>
-          فريقنا جاهز لمساعدتك في اختيار أفضل حلول الإضاءة
-        </p>
+        <p>اختر حلول إنارة موثوقة بتصميم يناسب مشروعك.</p>
 
         <button onClick={() => (window.location.href = "#/contact")}>
           تواصل الآن
         </button>
-      </section>
+      </motion.section>
 
     </main>
   );
