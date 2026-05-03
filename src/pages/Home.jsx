@@ -1,7 +1,3 @@
 export default function Home(){
-  return (
-    <div style={{padding:"40px", color:"white"}}>
-      <h1>الموقع شغال</h1>
-    </div>
-  );
+  return <h1 style={{color:"white"}}>HOME WORKING</h1>;
 }
