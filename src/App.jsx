@@ -1,5 +1,11 @@
+import React from "react";
+
 function App() {
-  return <h1 style={{color:"red", fontSize:"40px"}}>VERSION 777</h1>;
+  return (
+    <div style={{color:"white", padding:"40px"}}>
+      TEST WORKING
+    </div>
+  );
 }
 
 export default App;
