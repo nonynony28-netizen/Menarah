@@ -1,27 +1,44 @@
 import React from "react";
 
+/* ===== بيانات مبدئية (تبدّلها لاحقاً بالصور الحقيقية) ===== */
+
+// لماذا نحن
 const features = [
-  { title: "تصاميم عصرية", icon: "💡" },
-  { title: "كفاءة طاقة عالية", icon: "⚡" },
+  { title: "جودة عالية", icon: "💡" },
+  { title: "كفاءة طاقة", icon: "⚡" },
   { title: "تنفيذ احترافي", icon: "🛠️" },
-  { title: "ضمان وجودة", icon: "✅" },
+  { title: "ضمان وخدمة", icon: "✅" },
 ];
 
-const topProducts = [
+// الأكثر رواجاً – ENARAH
+const enarahProducts = [
   { name: "سبوت لايت", desc: "إضاءة داخلية عصرية" },
-  { name: "ثريات فاخرة", desc: "تصاميم راقية للمنازل" },
-  { name: "إنترفون", desc: "حلول تواصل حديثة" },
-  { name: "أسلاك كهرباء", desc: "أمان وجودة عالية" },
+  { name: "ثريا حديثة", desc: "تصميم فاخر" },
 ];
+
+// الأكثر رواجاً – WELLMAX
+const wellmaxProducts = [
+  { name: "لمبات LED", desc: "توفير عالي للطاقة" },
+  { name: "كشافات", desc: "إضاءة قوية خارجية" },
+];
+
+// شركاؤنا (استبدل بالإيمجات لاحقاً)
+const partners = ["ENARAH", "WELLMAX", "Partner 3", "Partner 4"];
+
+// مشاريع (استبدل بالإيمجات)
+const projects = ["فيلا", "محل", "سقف حديث"];
+
+// الفروع
+const branches = ["طرابلس", "اجدابيا", "مصراتة", "سبها"];
 
 function Home() {
   return (
     <main className="page hero">
 
-      {/* ===== Hero Section ===== */}
+      {/* ===== 1) HERO ===== */}
       <section className="hero-grid">
 
-        {/* Left (Text) */}
+        {/* نص */}
         <div>
           <span className="badge">حلول إنارة احترافية</span>
 
@@ -30,7 +47,7 @@ function Home() {
           </h1>
 
           <p>
-            إضاءة عصرية تجمع بين الأداء والجمال، مصممة خصيصاً لمشاريعك.
+            إضاءة عصرية تجمع بين الأداء والجمال، مصممة لتناسب جميع مشاريعك.
           </p>
 
           <div className="hero-actions">
@@ -47,22 +64,13 @@ function Home() {
           </div>
         </div>
 
-        {/* Right (Visual) */}
+        {/* عنصر بصري (استبدله بصورة لاحقاً) */}
         <div className="hero-visual">
-          <div className="hero-box">
-            💡
-          </div>
+          <div className="hero-box">💡</div>
         </div>
-
       </section>
 
-      {/* ===== Value Card ===== */}
-      <section className="hero-card">
-        <h3>جودة موثوقة</h3>
-        <p>منتجات بمعايير عالمية مع دعم فني مستمر.</p>
-      </section>
-
-      {/* ===== Features ===== */}
+      {/* ===== 2) لماذا نحن ===== */}
       <section className="section">
         <h2>لماذا نحن؟</h2>
 
@@ -77,12 +85,29 @@ function Home() {
         </div>
       </section>
 
-      {/* ===== Products ===== */}
+      {/* ===== 3) الأكثر رواجاً ===== */}
       <section className="section">
-        <h2>أهم المنتجات</h2>
+        <h2>الأكثر رواجًا لدينا</h2>
+        <p className="section-desc">
+          منتجات مختارة بعناية يفضلها عملاؤنا في مختلف المشاريع
+        </p>
 
+        {/* ENARAH */}
+        <h3 style={{ marginTop: "20px" }}>منتجات ENARAH</h3>
         <div className="grid">
-          {topProducts.map((p, i) => (
+          {enarahProducts.map((p, i) => (
+            <div className="card product-card" key={i}>
+              <div className="product-img">🛍️</div>
+              <h3>{p.name}</h3>
+              <p>{p.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* WELLMAX */}
+        <h3 style={{ marginTop: "30px" }}>منتجات WELLMAX</h3>
+        <div className="grid">
+          {wellmaxProducts.map((p, i) => (
             <div className="card product-card" key={i}>
               <div className="product-img">🛍️</div>
               <h3>{p.name}</h3>
@@ -92,16 +117,55 @@ function Home() {
         </div>
       </section>
 
-      {/* ===== CTA ===== */}
+      {/* ===== 4) شركاؤنا ===== */}
+      <section className="section">
+        <h2>شركاؤنا في النجاح</h2>
+
+        <div className="grid">
+          {partners.map((p, i) => (
+            <div className="card" key={i}>
+              <h3>{p}</h3>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ===== 5) المشاريع ===== */}
+      <section className="section">
+        <h2>مشاريعنا</h2>
+
+        <div className="grid">
+          {projects.map((proj, i) => (
+            <div className="card" key={i}>
+              <h3>{proj}</h3>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ===== 6) الفروع ===== */}
+      <section className="section">
+        <h2>فروعنا</h2>
+
+        <div className="grid">
+          {branches.map((b, i) => (
+            <div className="card" key={i}>
+              <h3>{b}</h3>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ===== 7) CTA ===== */}
       <section className="cta">
         <h2>ابدأ مشروعك معنا اليوم</h2>
 
         <p style={{ marginBottom: "15px" }}>
-          فريقنا جاهز لمساعدتك في اختيار أفضل حلول الإضاءة.
+          فريقنا جاهز لمساعدتك في اختيار أفضل حلول الإضاءة
         </p>
 
         <button onClick={() => (window.location.href = "#/contact")}>
-          اطلب استشارة الآن
+          تواصل الآن
         </button>
       </section>
 
