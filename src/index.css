@@ -67,6 +67,8 @@
     opacity: 1;
     transform: translateY(0);
   }
+}.nav-links a{
+  font-weight:600;
 }
 
 @keyframes loading{
