@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
+import Splash from "./pages/Splash.jsx";
 import "./index.css";
+
+function Root() {
+  const [loading, setLoading] = useState(true);
+
+  if (loading) {
+    return <Splash onFinish={() => setLoading(false)} />;
+  }
+
+  return <App />;
+}
 
 const rootElement = document.getElementById("root");
 
-if (!rootElement) {
-  throw new Error("Root element not found");
-}
-
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
-    <App />
+    <Root />
   </React.StrictMode>
 );
