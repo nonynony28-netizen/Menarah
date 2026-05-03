@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import splash from "./picture/hero.jpg"; // المسار الصحيح
+import splash from "./hero.jpg.PNG"; // المسار الصحيح حسب ملفك
 
 function Splash({ onFinish }) {
   useEffect(() => {
